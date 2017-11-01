@@ -3,7 +3,7 @@ A python script to quickly launch instances.
 
 
 ##Installation
-``git clone https://github.com/shrvn-k/LaunchInstances.git```
+```git clone https://github.com/shrvn-k/LaunchInstances.git```
 
 Edit ```config.json```
 
