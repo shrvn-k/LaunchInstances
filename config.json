@@ -13,6 +13,8 @@
 		"Region": "ap-south-1",
 		"MinCount":1,
 		"MaxCount":1,
-		"InstanceType":"t2.micro"
+		"InstanceType":"t2.micro",
+
+		"KeyPath":"/Users/kanags/keys/"
 	}
 }
