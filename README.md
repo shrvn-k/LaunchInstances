@@ -1,4 +1,4 @@
-# LaunchInstances
+# EC2 SSHer
 A python script to quickly launch instances.
 
 
