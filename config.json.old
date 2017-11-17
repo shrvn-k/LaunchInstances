@@ -1,0 +1,26 @@
+{
+	"EC2" : {
+		"Regions" : {
+			"ap-south-1" : {
+				"ImageId" : "ami-d7abd1b8",
+				"InstanceRegion" : "ap-south-1",
+				"KeyName" : "mumbai-pair-01",
+				"InstanceName" : ""
+			},
+
+			"us-east-1": {
+				"ImageId" : "ami-d7abd1b8",
+				"InstanceRegion" : "ap-south-1",
+				"KeyName" : "north-virginia.pem",
+				"InstanceName" : ""
+			}
+		}
+	},
+	"Default" : {
+		"Region": "ap-south-1",
+		"MinCount" : 1,
+		"MaxCount" : 1,
+		"InstanceType": "t2.micro",
+		"KeyPath" : "/Users/kanags/keys/"
+	}
+}
