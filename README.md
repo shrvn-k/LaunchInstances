@@ -1,5 +1,5 @@
 # EC2 SSHer
-A python script to quickly launch instances.
+A python script to quickly ssh into running ec2 instances.
 
 
 ## Installation and Usage
