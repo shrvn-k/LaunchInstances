@@ -3,7 +3,7 @@ A python script to quickly launch instances.
 
 
 ## Installation and Usage
-```git clone https://github.com/shrvn-k/LaunchInstances.git```
+```git clone https://github.com/shrvn-k/ec2-ssher.git```
 
 Edit ```config.json``` and provide your default region and the path to a folder containing all your ssh key pairs.
 
