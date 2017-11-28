@@ -24,7 +24,7 @@ def show_menu():
 	else:
 		for i,instance in enumerate(runningInstances,1):
 			print("{}. {} - {}".format(i, instance['instanceId'], instance['instanceName']))
-	print ("\nc. Change region \ne. Exit")
+	print ("\nc. Change region \nr. Refresh list \ne. Exit")
 	return raw_input("Choice:")
 
 
@@ -35,6 +35,8 @@ def check_choice(choice):
 		elif choice == 'e':
 			print("Exiting program")
 			sys.exit()
+		elif choice == 'r':
+			return
 
 		else:
 			choice = int(choice)
