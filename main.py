@@ -7,7 +7,6 @@ import sys
 
 def get_name(instance):
 	if 'Tags' in instance:
-		print instance['Tags']
 		for tag in instance['Tags']:
 			if tag['Key'] == 'Name':
 				return tag['Value']
@@ -37,7 +36,7 @@ def check_choice(choice):
 		if choice == 'c':
 			change_region()
 		elif choice == 'e':
-			print("Exiting program")
+			print("Exiting program. \nEC2-SSHer - By Shravan Kanagokar")
 			sys.exit()
 		elif choice == 'r':
 			return
@@ -56,13 +55,11 @@ def check_choice(choice):
 def change_region():
 	desc_regions_client = boto3.client('ec2')
 	desc_regions = desc_regions_client.describe_regions()
-	# print desc_regions
 	print "\n"
 	for i,region in enumerate(desc_regions['Regions'],1):
 		print("{}. {}".format(i,region['RegionName']))
 	choice = int(raw_input("Select region:"))
 	cfg.USER_REGION = desc_regions['Regions'][choice-1]['RegionName']
-	# print cfg.USER_REGION
 
 
 def get_running_instances():
@@ -79,20 +76,17 @@ def get_running_instances():
 	runningInstances = []
 	for reservation in response['Reservations']:
 		for instance in reservation['Instances']:
-			# print instance
-			# print '\n\n'
-			tempinstance = {
-			'instanceId': str(instance['InstanceId']),
-			'instanceName': str(get_name(instance)),
-			'publicIp': str(instance['PublicIpAddress']),
-			'keyName': str(instance['KeyName'])
-			}
-			runningInstances.append(tempinstance.copy())
+			if 'KeyName' in instance and 'PublicIpAddress' in instance:
+				tempinstance = {
+				'instanceId': str(instance['InstanceId']),
+				'instanceName': str(get_name(instance)),
+				'publicIp': str(instance['PublicIpAddress']),
+				'keyName': str(instance['KeyName'])
+				}
+				runningInstances.append(tempinstance.copy())
 	return runningInstances
 
 if __name__ == "__main__":
-	# with open('config.json') as data:
-	# 	config = json.load(data)
 	while True:
 		print "\n"+cfg.USER_REGION
 		runningInstances = get_running_instances()
