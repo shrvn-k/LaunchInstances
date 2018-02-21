@@ -6,9 +6,13 @@ import sys
 
 
 def get_name(instance):
-	for tag in instance['Tags']:
+	if 'Tags' in instance:
+		print instance['Tags']
+		for tag in instance['Tags']:
 			if tag['Key'] == 'Name':
 				return tag['Value']
+	return 'N/A'
+
 
 
 def ssh_instance(ip_addr, key_name):
@@ -75,6 +79,8 @@ def get_running_instances():
 	runningInstances = []
 	for reservation in response['Reservations']:
 		for instance in reservation['Instances']:
+			# print instance
+			# print '\n\n'
 			tempinstance = {
 			'instanceId': str(instance['InstanceId']),
 			'instanceName': str(get_name(instance)),
