@@ -4,7 +4,7 @@ import json
 import os
 import sys
 
-
+#Get the name of the instance from the 'Name' tag
 def get_name(instance):
 	if 'Tags' in instance:
 		for tag in instance['Tags']:
@@ -13,7 +13,7 @@ def get_name(instance):
 	return 'N/A'
 
 
-
+#Construct and run the SSH command
 def ssh_instance(ip_addr, key_name):
 	cmd = "ssh -i "+cfg.KEY_PATH+key_name+".pem "+"ec2-user@"+ip_addr
 	print cmd
@@ -30,7 +30,7 @@ def show_menu():
 	print ("\nc. Change region \nr. Refresh list \ne. Exit")
 	return raw_input("Choice:")
 
-
+#Check the choice entered by the user and run the relevant command
 def check_choice(choice):
 	try:
 		if choice == 'c':
