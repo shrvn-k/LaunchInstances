@@ -35,7 +35,7 @@ def check_choice(choice):
 	try:
 		if choice == 'c':
 			change_region()
-		elif choice == 'e':
+		elif choice == 'e' or choice=='exit':
 			print("Exiting program. \nEC2-SSHer - By Shravan Kanagokar")
 			sys.exit()
 		elif choice == 'r':

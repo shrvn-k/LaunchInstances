@@ -1,6 +1,6 @@
 {
 	"Default" : {
-		"Region": "ap-south-1",
+		"Region": "us-east-1",
 		"KeyFilesPath" : "/Users/kanags/keys/"
 	}
 }
